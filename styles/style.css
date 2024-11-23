@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('../assets/fonts/RedHatText-VariableFont_wght.ttf');
+}
+
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+
+/* --- general --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Text', sans-serif;
+  color: var(--rose-900);
+}
+
+/* --- body --- */
+body {
+  background-color: var(--rose-50);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 4rem;
+}
+
+h1 {
+  margin-bottom: 1.2rem;
+}
+
+/* --- products section --- */
+.products-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  width: 230px;
+  position: relative;
+}
+
+.product-card .product-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card .product-image img {
+  display: block;
+  width: 100%;
+}
+
+.tablet-img, .mobile-img {
+  display: none;
+}
+
+.product-card .add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: center;
+
+  position: absolute;
+  top: 61%;
+
+  padding: 10px 15px;
+  background-color: #FFF;
+  border-radius: 25px;
+  border: 1px solid var(--rose-500);
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.product-card .add-to-cart-btn:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.product-card .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-card .product-info span {
+  color: var(--rose-300);
+}
+
+.product-card .product-info h3 {
+  font-size: 16px;
+}
+
+.product-card .product-info p {
+  color: var(--red);
+}
+
+/* --- cart section --- */
+.cart-container {
+  background-color: #FFF;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.cart-container h2 {
+  color: var(--red);
+  margin-bottom: 1.2rem;
+}
+
+/* -- empty cart -- */
+.empty-cart-interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.empty-cart-interface p {
+  color: var(--rose-500);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* --- footer --- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer a {
+  color: var(--red);
+  text-decoration: none;
+}
