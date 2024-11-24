@@ -11,7 +11,7 @@
 </head>
 <body>
   <main>
-    <!-- products section -->
+    <!--- products section --->
     <div>
       <h1>Desserts</h1>
       <section class="products-cards-container">
@@ -31,10 +31,23 @@
             <img src="assets/images/image-waffle-mobile.jpg" alt="Picture of a waffle">
           </div>
 
+          <!-- add to cart button -->
           <button class="add-to-cart-btn">
             <img src="assets/images/icon-add-to-cart.svg" alt=""> Add to cart
           </button>
+
+          <!-- cart quantity control buttons -->
+          <div class="cart-quantity-control-btns">
+            <button class="decrease-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
+            </button>
+            <p>1</p>
+            <button class="increase-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+            </button>
+          </div>
           
+          <!-- product info text -->
           <div class="product-info">
             <span>Waffle</span>
             <h3>Waffle with Berries</h3>
@@ -152,7 +165,7 @@
       </section>
     </div>
 
-    <!-- cart section -->
+    <!--- cart section --->
     <section class="cart-container">
       <h2>Your Cart (0)</h2>
       <!-- shows when the cart is empty -->
@@ -207,11 +220,13 @@
           </section>
         </section>        
 
+        <!-- cart total -->
         <section class="cart-total-section">
           <p>Order Total</p>
           <p class="order-total-price">$46.50</p>
         </section>
 
+        <!-- delivery message -->
         <section class="delivery-message">
           <p>
             <img src="assets/images/icon-carbon-neutral.svg" alt="Carbon neutral tree icon">
@@ -219,12 +234,13 @@
           </p>
         </section>
 
+        <!-- confirm order button -->
         <button class="confirm-order-btn">Confirm Order</button>
       </section>
     </section>
   </main>
 
-  <!-- footer -->
+  <!--- footer --->
   <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Bianca Santos</a>.
