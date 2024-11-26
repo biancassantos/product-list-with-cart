@@ -67,7 +67,7 @@ h1 {
   overflow: hidden;
 }
 
-.selected {
+.selected-product {
   border: 3px solid var(--red);
 }
 
@@ -183,7 +183,8 @@ h1 {
   width: 450px;
 }
 
-.cart-container h2 {
+.cart-container h2,
+.cart-container h2 span {
   color: var(--red);
   margin-bottom: 1.2rem;
 }

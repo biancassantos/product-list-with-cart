@@ -22,7 +22,7 @@
 
     <!-- cart section -->
     <section class="cart-container">
-      <h2>Your Cart (0)</h2>
+      <h2>Your Cart (<span class="cart-total-quantity">0</span>)</h2>
       <!-- shows when the cart is empty -->
       <section class="empty-cart-interface">
         <img src="assets/images/illustration-empty-cart.svg" alt="Cake illustration for empty cart">
@@ -32,53 +32,13 @@
       <!-- shows when the cart has items -->
       <section class="full-cart-interface">
         <section class="cart-items-list">
-          <section class="cart-item">
-            <section>
-              <h4 class="item-name">Classic Tiramisu</h4>
-              <div class="item-prices-container">
-                <span class="item-quantity">1x</span>
-                <p class="item-unity-price">@$5.50</p>
-                <p class="item-total-price">$5.50</p>
-              </div>
-            </section>
-            <button class="remove-from-cart-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
-            </button>
-          </section>
-
-          <section class="cart-item">
-            <section>
-              <h4 class="item-name">Classic Tiramisu</h4>
-              <div class="item-prices-container">
-                <span class="item-quantity">1x</span>
-                <p class="item-unity-price">@$5.50</p>
-                <p class="item-total-price">$5.50</p>
-              </div>
-            </section>
-            <button class="remove-from-cart-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
-            </button>
-          </section>
-
-          <section class="cart-item">
-            <section>
-              <h4 class="item-name">Classic Tiramisu</h4>
-              <div class="item-prices-container">
-                <span class="item-quantity">1x</span>
-                <p class="item-unity-price">@$5.50</p>
-                <p class="item-total-price">$5.50</p>
-              </div>
-            </section>
-            <button class="remove-from-cart-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
-            </button>
-          </section>
+          <!-- cart items will show here -->
         </section>        
 
         <!-- cart total -->
         <section class="cart-total-section">
           <p>Order Total</p>
-          <p class="order-total-price">$46.50</p>
+          <p class="order-total-price"></p>
         </section>
 
         <!-- delivery message -->
