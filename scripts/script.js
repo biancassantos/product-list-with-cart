@@ -131,10 +131,8 @@ function addToCart(id) {
 
   updateCartQuantityControlTextValue();
   toggleSelectedProduct();
-  updateCartQuantity();
-  updateCartTotal();
   toggleCartInterface();
-  renderCartItems();
+  reRenderCartValues();
 }
 
 // toggles cart interface depending on whether the cart has items or not
@@ -184,9 +182,7 @@ function updateProductQuantity(type, productId) {
     }
   });
   updateCartQuantityControlTextValue();
-  updateCartQuantity();
-  updateCartTotal();
-  renderCartItems();
+  reRenderCartValues();
 }
 
 // updates the quantity text inside the controlCartQuantityBtns
@@ -237,9 +233,8 @@ function removeFromCart(productId) {
   cart = cart.filter(product => {
     return product.id !== productId;
   });
-  updateCartQuantity();
-  updateCartTotal();
-  renderCartItems();
+
+  reRenderCartValues();
   toggleSelectedProduct();
   toggleCartInterface();
   switchAddToCartBtns();
@@ -276,4 +271,11 @@ function renderCartItems() {
     cartItemsList.appendChild(cartItem);
     addEventListenerToRemoveBtns();
   })
+}
+
+// calls functions related to cart values
+function reRenderCartValues() {
+  updateCartQuantity();
+  updateCartTotal();
+  renderCartItems();
 }
