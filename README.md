@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://biancassantos.github.io/product-list-with-cart/)
+- Live Site URL: [Project page](https://biancassantos.github.io/product-list-with-cart/)
 
 ## My process
 
