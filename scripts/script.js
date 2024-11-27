@@ -2,12 +2,16 @@ const productsContainer = document.querySelector(".products-cards-container");
 const emptyCartInterface = document.querySelector(".empty-cart-interface");
 const fullCartInterface = document.querySelector(".full-cart-interface");
 const cartItemsList = document.querySelector(".cart-items-list");
-const orderTotal = document.querySelector(".order-total-price");
+const orderTotal = document.querySelectorAll(".order-total-price");
 const cartTotalQuantity = document.querySelector(".cart-total-quantity");
+const confirmOrderBtn = document.querySelector(".confirm-order-btn");
+const modal = document.querySelector(".modal");
+const modalItemsList = document.querySelector(".modal-items-list");
+const startNewOrderBtn = document.querySelector(".start-new-order-btn");
 let products;
 let cart = [];
 
-// renders the products
+// renders the products on the page
 function renderProducts() {
   products.forEach(product => {
     const productCard = document.createElement("section");
@@ -59,7 +63,7 @@ function renderProducts() {
   addEventListenerToControlBtns();
 }
 
-// fetches the data from data.json and calls render function
+// fetches the products from data.json and calls render function
 async function getProducts() {
   const response = await fetch("../data.json");
   products = await response.json();
@@ -76,9 +80,50 @@ function addEventListenerToAddBtn() {
     const productId = btn.parentNode.id;
     btn.addEventListener("click", () => {
       addToCart(productId);
-      switchAddToCartBtns(productId);
+      switchAddToCartBtns();
     });
   });
+}
+
+// adds event listener to the controlCartQuantityBtns after they are created
+function addEventListenerToControlBtns() {
+  const incrementBtn = document.querySelectorAll(".increment-btn");
+  const decrementBtn = document.querySelectorAll(".decrement-btn");
+
+  incrementBtn.forEach(btn => {
+    const productId = btn.parentNode.parentNode.id;
+    btn.addEventListener("click", () => updateProductQuantity("increment", productId));
+  });
+
+  decrementBtn.forEach(btn => {
+    const productId = btn.parentNode.parentNode.id;
+    btn.addEventListener("click", () => updateProductQuantity("decrement", productId));
+  });
+}
+
+// adds product to cart
+function addToCart(id) {
+  products.forEach(product => {
+    if (product.id === id) {
+      cart.push({...product, quantity: 1});
+    }
+  });
+
+  updateCartQuantityControlTextValue();
+  toggleSelectedProduct();
+  toggleCartInterface();
+  reRenderCartValues();
+}
+
+// toggles cart interface depending on whether the cart has items or not
+function toggleCartInterface() {
+  if (cart.length === 0) {
+    emptyCartInterface.style.display = "flex";
+    fullCartInterface.style.display = "none";
+  } else {
+    emptyCartInterface.style.display = "none";
+    fullCartInterface.style.display = "flex";
+  }
 }
 
 // checks if the product is in the cart
@@ -87,7 +132,7 @@ function checkCart(id) {
 }
 
 // switches the display of the addToCart btn and the cartQuantityControlBtns
-function switchAddToCartBtns(productId) {
+function switchAddToCartBtns() {
   const productsCards = document.querySelectorAll(".product-card");
   productsCards.forEach(card => {
     const productId = card.id;
@@ -118,47 +163,6 @@ function toggleSelectedProduct() {
     } else {
       productImgs.forEach(img => img.classList.remove("selected-product"));
     }
-  });
-}
-
-// adds product to cart
-function addToCart(id) {
-  products.forEach(product => {
-    if (product.id === id) {
-      cart.push({...product, quantity: 1});
-    }
-  });
-
-  updateCartQuantityControlTextValue();
-  toggleSelectedProduct();
-  toggleCartInterface();
-  reRenderCartValues();
-}
-
-// toggles cart interface depending on whether the cart has items or not
-function toggleCartInterface() {
-  if (cart.length === 0) {
-    emptyCartInterface.style.display = "flex";
-    fullCartInterface.style.display = "none";
-  } else {
-    emptyCartInterface.style.display = "none";
-    fullCartInterface.style.display = "flex";
-  }
-}
-
-// adds event listener to the controlCartQuantityBtns after they are created
-function addEventListenerToControlBtns() {
-  const incrementBtn = document.querySelectorAll(".increment-btn");
-  const decrementBtn = document.querySelectorAll(".decrement-btn");
-
-  incrementBtn.forEach(btn => {
-    const productId = btn.parentNode.parentNode.id;
-    btn.addEventListener("click", () => updateProductQuantity("increment", productId));
-  });
-
-  decrementBtn.forEach(btn => {
-    const productId = btn.parentNode.parentNode.id;
-    btn.addEventListener("click", () => updateProductQuantity("decrement", productId));
   });
 }
 
@@ -201,13 +205,15 @@ function updateCartQuantityControlTextValue() {
   });
 }
 
-// updates the cart total price
+// updates the order total price
 function updateCartTotal() {
   let cartTotal = 0;
   cart.forEach(product => {
     cartTotal += product.quantity * product.price;
   });
-  orderTotal.innerText = `$${cartTotal.toFixed(2)}`;
+  orderTotal.forEach(total => {
+    total.innerText = `$${cartTotal.toFixed(2)}`;
+  });
 }
 
 // updates the cart total quantity
@@ -240,7 +246,7 @@ function removeFromCart(productId) {
   switchAddToCartBtns();
 }
 
-// clears the cartItemsList before rendering so the products don't show duplicated
+// clears the list before rendering so the products don't show duplicated
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
@@ -279,3 +285,42 @@ function reRenderCartValues() {
   updateCartTotal();
   renderCartItems();
 }
+
+// shows the modal
+confirmOrderBtn.addEventListener("click", () => {
+  modal.showModal();
+  renderModalItems();
+});
+
+// renders the cart products in the modal
+function renderModalItems() {
+  removeAllChildNodes(modalItemsList);
+  cart.forEach(product => {
+    const modalItem = document.createElement("section");
+    modalItem.classList.add("cart-item");
+    modalItem.innerHTML = `
+      <section class="item-info">
+        <img src=${product.image.thumbnail} alt="Picture of a ${product.name}">
+        <div>
+          <h4 class="item-name">${product.name}</h4>
+          <div class="item-prices-container">
+            <span class="item-quantity">${product.quantity}x</span>
+            <p class="item-unity-price">@$${(product.price).toFixed(2)}</p>
+          </div>
+        </div>
+      </section>
+      <p class="item-total-price">$${(product.quantity * product.price).toFixed(2)}</p>
+    `;
+    modalItemsList.appendChild(modalItem);
+  })
+}
+
+// resets the cart
+startNewOrderBtn.addEventListener("click", () => {
+  modal.close();
+  cart = [];
+  reRenderCartValues();
+  toggleSelectedProduct();
+  toggleCartInterface();
+  switchAddToCartBtns();
+});

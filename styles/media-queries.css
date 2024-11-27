@@ -40,12 +40,26 @@
   .cart-container {
     width: 95vw;
   }
+
+  dialog {
+    width: 390px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  dialog {
+    margin: auto 0 0 0;
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  .modal-header h2 {
+    font-size: 2rem;
+  }
 }
 
 /* --- mobile --- */
 @media screen and (max-width: 375px) {
-  
-
   .product-card {
     width: 85vw;
   }

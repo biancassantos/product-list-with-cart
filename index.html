@@ -23,6 +23,7 @@
     <!-- cart section -->
     <section class="cart-container">
       <h2>Your Cart (<span class="cart-total-quantity">0</span>)</h2>
+
       <!-- shows when the cart is empty -->
       <section class="empty-cart-interface">
         <img src="assets/images/illustration-empty-cart.svg" alt="Cake illustration for empty cart">
@@ -35,13 +36,11 @@
           <!-- cart items will show here -->
         </section>        
 
-        <!-- cart total -->
         <section class="cart-total-section">
           <p>Order Total</p>
           <p class="order-total-price"></p>
         </section>
 
-        <!-- delivery message -->
         <section class="delivery-message">
           <p>
             <img src="assets/images/icon-carbon-neutral.svg" alt="Carbon neutral tree icon">
@@ -49,16 +48,38 @@
           </p>
         </section>
 
-        <!-- confirm order button -->
-        <button class="confirm-order-btn">Confirm Order</button>
+        <button class="confirm-order-btn red-btn">
+          Confirm Order
+        </button>
       </section>
     </section>
+
+    <!-- confirmed order modal -->
+    <dialog class="modal">
+      <section class="modal-header">
+        <img src="assets/images/icon-order-confirmed.svg" alt="Confirmed order icon">
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food!</p>
+      </section>
+
+      <section class="modal-body">
+        <section class="modal-items-list">
+          <!-- order items will show here -->
+        </section>
+        <section class="cart-total-section">
+          <p>Order Total</p>
+          <p class="order-total-price">$</p>
+        </section>
+      </section>
+
+      <button class="start-new-order-btn red-btn">Start New Order</button>
+    </dialog>
   </main>
 
   <!-- footer -->
   <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Bianca Santos</a>.
+    Coded by <a href="https://github.com/biancassantos/product-list-with-cart">Bianca Santos</a>.
   </footer>
 
   <script src="scripts/script.js"></script>

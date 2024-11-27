@@ -212,7 +212,7 @@ h1 {
 }
 
 /* - cart items list - */
-.cart-items-list .cart-item {
+.cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,25 +221,25 @@ h1 {
   border-bottom: 1px solid var(--rose-100);
 }
 
-.cart-items-list .cart-item .item-name {
+.cart-item .item-name {
   margin-bottom: 10px;
 }
 
-.cart-items-list .cart-item .item-prices-container {
+.cart-item .item-prices-container {
   display: flex;
   gap: 12px;
 }
 
-.cart-items-list .cart-item .item-prices-container .item-quantity {
+.cart-item .item-prices-container .item-quantity {
   font-weight: 600;
   color: var(--red);
 }
 
-.cart-items-list .cart-item .item-prices-container .item-unity-price {
+.cart-item .item-prices-container .item-unity-price {
   color: var(--rose-500);
 }
 
-.cart-items-list .cart-item .item-prices-container .item-total-price {
+.cart-item .item-prices-container .item-total-price {
   font-weight: 600;
   color: var(--rose-500);
 }
@@ -300,8 +300,8 @@ h1 {
   margin-bottom: -2px;
 }
 
-/* - confirm order button - */
-.confirm-order-btn {
+/* - confirm order and start new order buttons - */
+.red-btn {
   align-self: center;
   width: 100%;
   background-color: var(--red);
@@ -315,8 +315,68 @@ h1 {
   transition: .3s;
 }
 
-.confirm-order-btn:hover {
+.red-btn:hover {
   background-color: hsl(14, 85%, 35%);
+}
+
+/* --- modal --- */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+dialog {
+  margin: auto;
+  width: 450px;
+  max-height: 90vh;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.modal-header,
+.modal-items-list {
+  margin-bottom: 2rem;
+}
+
+.modal-header img {
+  width: 35px;
+  margin-bottom: 10px;
+}
+
+.modal-header h2 {
+  font-size: 1.8rem;
+}
+
+.modal-header p {
+  font-size: .9rem;
+  color: var(--rose-500);
+}
+
+.modal-body {
+  padding: 1rem;
+  padding-top: 0;
+  background-color: var(--rose-50);
+}
+
+.modal-items-list .cart-item img {
+  width: 55px;
+  border-radius: 5px;
+}
+
+.modal-items-list .cart-item .item-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-items-list .cart-item .item-total-price {
+  font-weight: 600;
+}
+
+.start-new-order-btn {
+  padding: 10px 15px;
+  margin-top: 1.2rem;
 }
 
 /* --- footer --- */
@@ -328,4 +388,22 @@ footer {
 footer a {
   color: var(--red);
   text-decoration: none;
+}
+
+/* --- scrollbar --- */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 10px 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose-300);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rose-400);
 }
