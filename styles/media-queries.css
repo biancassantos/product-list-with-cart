@@ -62,7 +62,7 @@
 
   .product-card .add-to-cart-btn,
   .cart-quantity-control-btns {
-    top: 57%;
+    top: 62%;
     padding: 10px 25px;
   }
 
@@ -74,5 +74,12 @@
 
   .modal-header h2 {
     font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .product-card .add-to-cart-btn,
+  .cart-quantity-control-btns {
+    top: 57%;
   }
 }
