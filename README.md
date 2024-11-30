@@ -11,11 +11,11 @@ Olá, esse é a resolução de um desafio do Frontend Mentor de uma lista de pro
 - Fazer um novo pedido, zerando o carrinho
 
 ### Links:
-- <a href="https://biancassantos.github.io/product-list-with-cart/" target="_blank">Deploy do projeto</a>
+- <a href="https://biancassantos.github.io/product-list-with-cart/" target="_blank">Página do projeto</a>
 
 </br>
 
-![Design do projeto](https://raw.githubusercontent.com/biancassantos/pethelp/refs/heads/main/pethelp-design.png)
+![Design do projeto](https://raw.githubusercontent.com/biancassantos/product-list-with-cart/refs/heads/main/project-design.png)
 
 ## 🔎 Especificações
 ### Tecnologias:
