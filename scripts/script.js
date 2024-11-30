@@ -1,4 +1,3 @@
-import products from "../data.json" with { type: 'json' };
 const productsContainer = document.querySelector(".products-cards-container");
 const emptyCartInterface = document.querySelector(".empty-cart-interface");
 const fullCartInterface = document.querySelector(".full-cart-interface");
@@ -10,9 +9,10 @@ const modal = document.querySelector(".modal");
 const modalItemsList = document.querySelector(".modal-items-list");
 const startNewOrderBtn = document.querySelector(".start-new-order-btn");
 let cart = [];
+let products;
 
 // renders the products on the page
-function renderProducts() {
+function renderProducts(products) {
   products.forEach(product => {
     const productCard = document.createElement("section");
     productCard.classList.add("product-card");
@@ -63,7 +63,14 @@ function renderProducts() {
   addEventListenerToControlBtns();
 }
 
-renderProducts();
+// fetches the products from data.json
+async function getProducts() {
+  const response = await fetch("../data.json");
+  products = await response.json();
+  renderProducts(products);
+}
+
+getProducts();
 
 // adds event listener to addToCartBtns after they are created
 function addEventListenerToAddBtn() {
