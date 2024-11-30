@@ -1,46 +1,29 @@
 # Frontend Mentor - Product list with cart
 
-This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+## 📄 Sobre
+Olá, esse é a resolução de um desafio do Frontend Mentor de uma lista de produtos com carrinho.
 
-## Table of contents
+### Funcionalidades:
+- Adicionar/remover um produto do carrinho
+- Aumentar/diminuir a quantidade do produto
+- Confirmar o pedido
+- Modal de confirmação do pedido
+- Fazer um novo pedido, zerando o carrinho
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+### Links:
+- <a href="https://biancassantos.github.io/product-list-with-cart/" target="_blank">Deploy do projeto</a>
 
-## Overview
+</br>
 
-### The challenge
+![Design do projeto](https://raw.githubusercontent.com/biancassantos/pethelp/refs/heads/main/pethelp-design.png)
 
-Users should be able to:
+## 🔎 Especificações
+### Tecnologias:
+- HTML
+- CSS
+- JS
 
-- Add items to the cart and remove them
-- Increase/decrease the number of items in the cart
-- See an order confirmation modal when they click "Confirm Order"
-- Reset their selections when they click "Start New Order"
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+</br>
 
-### Screenshot
-
-![Design preview for the Product list with cart coding challenge](./preview.jpg)
-
-### Links
-
-- Live Site URL: [Project page](https://biancassantos.github.io/product-list-with-cart/)
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- JavaScript
-
-### What I learned
-I revisited many JS concepts that I had learned previously but built some of the solutions with different approaches. I also learned how to work with a project that was not designed by me.
+## 📁 Resources
+- [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
