@@ -65,9 +65,13 @@ function renderProducts(products) {
 
 // fetches the products from data.json
 async function getProducts() {
-  const response = await fetch("../data.json");
-  products = await response.json();
-  renderProducts(products);
+  try {
+    const response = await fetch("./data.json");
+    products = await response.json();
+    renderProducts(products);
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 getProducts();
