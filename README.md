@@ -12,6 +12,7 @@ Esse projeto é a resolução do desafio do Frontend Mentor de uma lista de prod
 
 ### Links:
 - <a href="https://biancassantos.github.io/product-list-with-cart/" target="_blank">Página do projeto</a>
+- [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
 
 </br>
 
@@ -26,4 +27,5 @@ Esse projeto é a resolução do desafio do Frontend Mentor de uma lista de prod
 </br>
 
 ## 📁 Resources
-- [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
+### Imagens:
+- [Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
