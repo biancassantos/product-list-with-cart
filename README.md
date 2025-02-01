@@ -1,7 +1,7 @@
-# Frontend Mentor - Product list with cart
+# Product list with cart - Frontend Mentor
 
 ## 📄 Sobre
-Olá, esse é a resolução de um desafio do Frontend Mentor de uma lista de produtos com carrinho.
+Esse projeto é a resolução do desafio do Frontend Mentor de uma lista de produtos com carrinho.
 
 ### Funcionalidades:
 - Adicionar/remover um produto do carrinho
@@ -21,7 +21,7 @@ Olá, esse é a resolução de um desafio do Frontend Mentor de uma lista de pro
 ### Tecnologias:
 - HTML
 - CSS
-- JS
+- JavaScript
 
 </br>
 
